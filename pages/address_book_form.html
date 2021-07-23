@@ -29,6 +29,38 @@
                             alt="Cancel Icon"></a>
                 </div>
             </div>
+            <div class="row-content">
+                <label for="fullname" class="label text">Full Name</label>
+                <input type="text" class="input" id="fullname" name="fullname" required>
+                <error-output class="text-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <label for="tel" class="label text">Phone Number</label>
+                <input type="tel" id="tel" name="tel" class="input">
+                <error-output class="mobno-error" for="tel"></error-output>
+            </div>
+            <div class="row-content">
+                <label for="notes" class="label text">Address</label>
+                <textarea class="input text" name="notes" id="address" style="height: 100px;"></textarea>
+            </div>
+            <div class="select-items">
+                <div name="citySelect" id="citySelect" class="selectDiv">
+                    <label for="city" class="label text">City</label>
+                    <select name="city" id="city">
+                        <option value="">Select City</option>
+                    </select>
+                </div>
+                <div name="stateSelect" id="stateSelect" class="selectDiv">
+                    <label for="state" class="label text">State</label>
+                    <select name="state" id="state">
+                        <option value="">Select State</option>
+                    </select>
+                </div>
+                <div name="zipSelect" id="zipSelect">
+                    <label for="zip" class="label text">ZipCode</label>
+                    <input class="input" type="number" name="zip" id="zip" required>
+                </div>
+            </div>
         </form>
     </div>
 </body>
