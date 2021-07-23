@@ -42,17 +42,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
   const saveForm=(event)=>{
-      createAddressBookData();
-  }
+    try{
+      let addressBookData=createAddressBookData();
+      createAndUpdateStorage(addressBookData);
+    }catch(e){
+        console.log(e);
+        return;
+    }
+  
+}
 
-  const createAddressBookData=()=>{
-      const addressBook={
-          "fullName":document.querySelector('#name').value,
-          "mobileNumber":document.querySelector('#mobile').value,
-          "address":document.querySelector('#address').value,
-          "city":document.querySelector('#city').value,
-          "state":document.querySelector('#state').value,
-          "zip":document.querySelector('#zip').value
-      }
-      alert(JSON.stringify(addressBook));
-  }
+const createAddressBookData=()=>{
+  let addressBook=new AddressBook();
+  addressBook.fullName=document.querySelector('#name').value,
+  addressBook.mobileNumber=document.querySelector('#mobile').value,
+  addressBook.address=document.querySelector('#address').value,
+  addressBook.city=document.querySelector('#city').value,
+  addressBook.state=document.querySelector('#state').value,
+  addressBook.zip=document.querySelector('#zip').value
+  alert(JSON.stringify(addressBook));
+  return addressBook;
+}
+
+ const createAndUpdateStorage=(addressBookData)=>{
+     let addressBookList=JSON.stringify(localStorage.getItem("AddressBookList"));
+     if(addressBookList != "null") addressBookList.push(addressBookData);
+     else addressBookList=[addressBookData];
+     alert(addressBookList.toString());
+     localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
+ }
