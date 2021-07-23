@@ -46,8 +46,10 @@ class AddressBookContact {
         return this._phoneNumber;
     }
     set phoneNumber(phoneNumber) {
-        let phPattern = RegExp('((^\\+?)(([0-9]{2,3})(\\s))?)' + '[0-9]{10}$');
-        if (phPattern.test(phoneNumber)) {
+        let phPattern1 = RegExp('^[1-9][0-9]{9}$');
+        let phPattern2 = RegExp('^[0-9]{2}[1-9][0-9]{9}$');
+        let phPattern3 = RegExp('^[+][0-9]{2}[1-9][0-9]{9}$');
+        if (phPattern1.test(phoneNumber) || phPattern2.test(phoneNumber) || phPattern3.test(phoneNumber)) {
             this._phoneNumber = phoneNumber;
         }
         else
