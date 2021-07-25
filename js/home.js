@@ -1,7 +1,7 @@
 let addressBookList;
 window.addEventListener('DOMContentLoaded', (event) => {
     addressBookList = getAddressBookDataFromStorage();
-    document.querySelector(".emp-count").textContent = addressBookList.length;
+    document.querySelector(".addressbook-count").textContent = addressBookList.length;
     createInnerHtml();
     localStorage.removeItem('editEmp');
 });
