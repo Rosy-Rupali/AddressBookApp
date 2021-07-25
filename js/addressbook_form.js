@@ -64,8 +64,8 @@ const createAddressBookData = () => {
 }
 
 const createAndUpdateStorage = (addressBookData) => {
-    let addressBookList = JSON.stringify(localStorage.getItem("AddressBookList"));
-    if (addressBookList != "null") addressBookList.push(addressBookData);
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+    if (addressBookList != undefined) addressBookList.push(addressBookData);
     else addressBookList = [addressBookData];
     alert(addressBookList.toString());
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
