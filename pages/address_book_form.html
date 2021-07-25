@@ -18,15 +18,13 @@
             </div>
         </div>
     </header>
-
     <div id="formId" class="form-content">
         <form class="form" action="#" onreset="resetForm()" onsubmit="saveForm(event)">
             <div class="address-header">
                 <div class="address-header-content">Person Address Form</div>
-                <a href="../pages/home.html"><img class="cancel-button" src="../assets/images/cancel-icon.png"></a>
+                <div><a href="../pages/home.html"><img class="cancel-button" src="../assets/images/cancel-icon.png"></a>
+                </div>
             </div>
-
-            <br><br>
             <div class="row-content">
                 <label class="label text" for="name">Full Name</label>
                 <div class="error-div">
@@ -43,13 +41,13 @@
             </div>
             <div class="row-content address-label">
                 <label class="label text" for="address">Address</label>
-                <div class="error-div"></div>
+                <div class="error-div">
                 <textarea class="input address-text" type="text" name="address" id="address" placeholder="Enter your address here" required ></textarea>
                 <error-output class="address-error" for="address"></error-output>
                 </div>
             </div>
             <div class="row-content-exp">
-                <div class="oneRow-content">
+                <div class="oneRow-content" name="citySelect" id="citySelect">
                 <label class="label text" for="city">City</label>
                 <select class="select-input" id="city" name="city" required>
                   <option value="" selected disabled hidden>Select City</option>
@@ -61,7 +59,7 @@
                   <option value="Bhopal">Bhopal</option>
                 </select>
               </div>
-              <div class="oneRow-content">
+              <div class="oneRow-content" name="stateSelect" id="stateSelect">
                 <label class="label text" for="state">State</label>
                 <select class="select-input" id="state" name="state" required>
                   <option value="" selected disabled hidden>Select State</option>
